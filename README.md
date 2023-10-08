@@ -2,7 +2,7 @@
 # jsonrpc-lean
 # version: 1.1.0
 
-An [LGPL](https://www.gnu.org/licenses/lgpl-3.0.en.html) licensed, client/server, transport-agnostic, JSON-RPC library for C++.
+An MIT licensed, client/server, transport-agnostic, JSON-RPC library for C++.
 
 The initial jsonrpc-lean implementation is derived from xsonrpc (https://github.com/erijo/xsonrpc) by Erik Johansson (https://github.com/erijo/). Many thanks to him.
 
