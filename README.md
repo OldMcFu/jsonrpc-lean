@@ -1,10 +1,12 @@
 
 # jsonrpc-lean
-# version: 1.1.0
+# version: 1.2.0
 
 An MIT licensed, client/server, transport-agnostic, JSON-RPC library for C++.
 
 The initial jsonrpc-lean implementation is derived from xsonrpc (https://github.com/erijo/xsonrpc) by Erik Johansson (https://github.com/erijo/). Many thanks to him.
+
+Many thanks to Adrianio Maia which authorize me to fork his repository under MIT licence.
 
 The main idea behind branching xsonrpc and building a new project is to have a simple, transport-agnostic, header-only implementation, with as little external dependencies as possible. 
 

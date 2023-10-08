@@ -1,8 +1,3 @@
-// This file is part of jsonrpc-lean, a c++11 JSON-RPC client/server library.
-//
-// Copyright (C) 2015 Adriano Maia <tony@stark.im>
-//
-
 #ifndef JSONRPC_LEAN_JSONREQUESTDATA_H
 #define JSONRPC_LEAN_JSONREQUESTDATA_H
 
