@@ -45,11 +45,9 @@ namespace jsonrpc {
             WriteId(id);
 
             myRequestData->Writer.Key(json::PARAMS_NAME, sizeof(json::PARAMS_NAME) - 1);
-            myRequestData->Writer.StartArray();
         }
 
         void EndRequest() override {
-            myRequestData->Writer.EndArray();
             myRequestData->Writer.EndObject();
         }
 

@@ -43,13 +43,18 @@ namespace jsonrpc {
             Request::Parameters parameters;
             auto params = myDocument.FindMember(json::PARAMS_NAME);
             if (params != myDocument.MemberEnd()) {
-                if (!params->value.IsArray()) {
-                    throw InvalidRequestFault();
-                }
 
-                for (auto param = params->value.Begin(); param != params->value.End();
-                    ++param) {
-                    parameters.emplace_back(GetValue(*param));
+                if (params->value.IsArray()) {
+                    for (auto param = params->value.Begin(); param != params->value.End();
+                        ++param) {
+                        jsonrpc::Value v = GetValue(*param);
+                        parameters.emplace_back(v);
+                    }
+                }else if(params->value.IsObject()){
+                    jsonrpc::Value v = GetValue(params->value);
+                    parameters.emplace_back(v);
+                }else{
+                    throw InvalidRequestFault();
                 }
             }
 

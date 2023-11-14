@@ -43,15 +43,6 @@ namespace jsonrpc
             // auto hand=async(launch::async,&A::do_rand_stf,this,i,j);
             std::cout << aRequestData << std::endl;
             myWorkers.push_back(std::async(std::launch::async, &AsyncServer::serverAsyncTask, this, aRequestData));
-
-            for (unsigned int i = 0; i < myWorkers.size(); i++)
-            {
-                if (myWorkers[i].wait_for(std::chrono::seconds(0)) == std::future_status::ready)
-                {
-                    myWorkers.erase(myWorkers.begin() + i);
-                    myWorkers.shrink_to_fit();
-                }
-            }
         }
 
         std::shared_ptr<jsonrpc::FormattedData> checkResponseQueue()
@@ -66,6 +57,7 @@ namespace jsonrpc
                         myWorkers.shrink_to_fit();
                     }
                 }
+                std::cout << "Worker Queue Size: " << myWorkers.size() << std::endl;
                 return tsQueue.pop();
             }
             else
@@ -79,7 +71,7 @@ namespace jsonrpc
 
             // first find the correct handler
             const std::string aContentType = "application/json";
-            // first find the correct handler
+
             FormatHandler *fmtHandler = nullptr;
             for (auto handler : myFormatHandlers)
             {

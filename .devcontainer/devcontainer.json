@@ -12,7 +12,8 @@
 				"ms-vscode.cpptools",
 				"ms-python.python",
 				"AdaCore.ada-debug",
-				"ms-vscode.cpptools-extension-pack"
+				"ms-vscode.cpptools-extension-pack",
+				"mhutchie.git-graph"
 			]
 		}
 	}
